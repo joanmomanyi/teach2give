@@ -4,11 +4,34 @@
     <title>TEACH2GIVE FizzBuzz</title>
     <style>
         code {
-            white-space: pre-wrap; /* Preserve whitespace and line breaks */
-            font-family: monospace; /* Use a monospace font for consistent spacing */
-            background-color: #f4f4f4; /* Light background for code block */
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #f4f4f4;
             padding: 10px;
-            display: block; /* Make the code element a block element */
+            display: block;
+        }
+
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
         }
     </style>
 </head>
@@ -30,27 +53,40 @@
         <code>
 //Loop through all numbers from 1 to 100
 for (let i = 1; i <= 100; i++) {
-   if (i % 3 === 0 && i % 5 === 0) {
+  if (i % 3 === 0 && i % 5 === 0) {
    //If i is divisible by 3 & 5; print "FizzBuzz"
-      console.log("FizzBuzz");
-   } else if (i % 3 === 0) {
-   //If i is divisible by 3, print "Fizz"
-      console.log("Fizz");
-   } else if (i % 5 === 0) {
-   //If i is divisible by 5, print "Buzz"
-      console.log("Buzz");
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    //If i is divisible by 3, print "Fizz"
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    //If i is divisible by 5, print "Buzz"
+     console.log("Buzz");
    } else {
-   // Otherwise, print the number i
-      console.log(i);
+    // Otherwise, print the number i
+     console.log(i);
    }
 }
         </code>
 
-        <h3>Output</h3>
-
-        <div id="fizzbuzz-output"></div>
+        <button type="button" class="collapsible">Output</button>
+        <div class="content">
+            <div id="fizzbuzz-output"></div>
+        </div>
 
         <script>
+            let collapsible = document.querySelector(".collapsible");
+            let content = collapsible.nextElementSibling;
+
+            collapsible.addEventListener("click", function() {
+                this.classList.toggle("active");
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+
             // Get the HTML element where FizzBuzz results will be displayed.
             let outputDiv = document.getElementById("fizzbuzz-output");
 
