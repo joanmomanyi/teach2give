@@ -31,7 +31,7 @@
             padding: 0 18px;
             display: none;
             overflow: hidden;
-            background-color: #f1f1f1;
+            background-color: whitesmoke;
         }
     </style>
 </head>
@@ -69,13 +69,13 @@ for (let i = 1; i <= 100; i++) {
 }
         </code>
 
-        <button type="button" class="collapsible">Output</button>
+        <button type="button" id="collapsible-fizzbuzz-output">Output</button>
         <div class="content">
             <div id="fizzbuzz-output"></div>
         </div>
 
         <script>
-            let collapsible = document.querySelector(".collapsible");
+            let collapsible = document.getElementById("collapsible-fizzbuzz-output");
             let content = collapsible.nextElementSibling;
 
             collapsible.addEventListener("click", function() {
