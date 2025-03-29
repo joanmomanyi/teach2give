@@ -1,62 +1,61 @@
+<!DOCTYPE html>
 <html>
 <head>
-
+    <title>TEACH2GIVE FizzBuzz</title>
 </head>
-
 <body>
-<h1>
-TEACH2GIVE TECHNICAL TEST
-</h1>
-<h2>
-Question 1: FizzBuzz
-</h2>
-<p>
-Write a program that prints the numbers from 1 to 100. 
-<ul>
-<li>
-For multiples of 3, print "Fizz"; 
-</li>
-<li>
-For multiples of 5, print "Buzz"; 
-</li>
-<li>
-And for numbers that are multiples of both 3 and 5, print "FizzBuzz".
-</li>
-</ul>
-</p>
-<p>
+    <h1>TEACH2GIVE TECHNICAL TEST</h1>
+    <h2>Question 1: FizzBuzz</h2>
+    <p>
+        Write a program that prints the numbers from 1 to 100.
+        <ul>
+            <li>For multiples of 3, print "Fizz";</li>
+            <li>For multiples of 5, print "Buzz";</li>
+            <li>And for numbers that are multiples of both 3 and 5, print "FizzBuzz".</li>
+        </ul>
+    </p>
+    <p>
+        <code>
+            // Original console log code (not displayed on page)
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log("FizzBuzz");
+                } else if (i % 3 === 0) {
+                    console.log("Fizz");
+                } else if (i % 5 === 0) {
+                    console.log("Buzz");
+                } else {
+                    console.log(i);
+                }
+            }
+        </code>
 
-<code>
-for (let i = 1; i <= 100; i++) { <br />
-  if (i % 3 === 0 && i % 5 === 0) { <br />
-    console.log("FizzBuzz"); <br />
-  } else if (i % 3 === 0) { <br />
-    console.log("Fizz"); <br />
-  } else if (i % 5 === 0) { <br />
-    console.log("Buzz"); <br />
-  } else { <br />
-    console.log(i); <br />
-  } <br />
-} <br />
-</code>
+        <div id="fizzbuzz-output"></div>
 
-<div id="fizzbuzz-output"></div>
+        <script>
+            // Get the div element where the output will be displayed.
+            let outputDiv = document.getElementById("fizzbuzz-output");
 
-<script>
-let outputDiv = document.getElementById("fizzbuzz-output");
-for (let i = 1; i <= 100; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    outputDiv.innerHTML += "FizzBuzz<br />";
-  } else if (i % 3 === 0) {
-    outputDiv.innerHTML += "Fizz<br />";
-  } else if (i % 5 === 0) {
-    outputDiv.innerHTML += "Buzz<br />";
-  } else {
-    outputDiv.innerHTML += i + "<br />";
-  }
-}
-</script>
-</p>
+            // Loop from 1 to 100.
+            for (let i = 1; i <= 100; i++) {
+                // Check if the number is a multiple of both 3 and 5.
+                if (i % 3 === 0 && i % 5 === 0) {
+                    outputDiv.innerHTML += "FizzBuzz<br />"; // Append "FizzBuzz" with a line break.
+                } 
+                // Check if the number is a multiple of 3.
+                else if (i % 3 === 0) {
+                    outputDiv.innerHTML += "Fizz<br />"; // Append "Fizz" with a line break.
+                } 
+                // Check if the number is a multiple of 5.
+                else if (i % 5 === 0) {
+                    outputDiv.innerHTML += "Buzz<br />"; // Append "Buzz" with a line break.
+                } 
+                // If not a multiple of 3 or 5, append the number itself.
+                else {
+                    outputDiv.innerHTML += i + "<br />"; // Append the number with a line break.
+                }
+            }
+        </script>
+    </p>
 </body>
 </html>
-
