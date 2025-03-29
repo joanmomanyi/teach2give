@@ -10,29 +10,6 @@
             padding: 10px;
             display: block;
         }
-
-        .collapsible {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .active, .collapsible:hover {
-            background-color: #ccc;
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: whitesmoke;
-        }
     </style>
 </head>
 <body>
@@ -68,52 +45,5 @@ for (let i = 1; i <= 100; i++) {
    }
 }
         </code>
-
-        <button type="button" id="collapsible-fizzbuzz-output">Output</button>
-        <div class="content">
-            <div id="fizzbuzz-output"></div>
-        </div>
-
-        <script>
-            let collapsible = document.getElementById("collapsible-fizzbuzz-output");
-            let content = collapsible.nextElementSibling;
-
-            collapsible.addEventListener("click", function() {
-                this.classList.toggle("active");
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-
-            // Get the HTML element where FizzBuzz results will be displayed.
-            let outputDiv = document.getElementById("fizzbuzz-output");
-
-            // Loop through numbers from 1 to 100.
-            for (let i = 1; i <= 100; i++) {
-                // Check if the current number is divisible by both 3 and 5.
-                if (i % 3 === 0 && i % 5 === 0) {
-                    // Append "FizzBuzz" followed by a line break to the output div.
-                    outputDiv.innerHTML += "FizzBuzz<br />";
-                } 
-                // Check if the current number is divisible by 3.
-                else if (i % 3 === 0) {
-                    // Append "Fizz" followed by a line break to the output div.
-                    outputDiv.innerHTML += "Fizz<br />";
-                } 
-                // Check if the current number is divisible by 5.
-                else if (i % 5 === 0) {
-                    // Append "Buzz" followed by a line break to the output div.
-                    outputDiv.innerHTML += "Buzz<br />";
-                } 
-                // If not divisible by 3 or 5, append the number itself.
-                else {
-                    // Append the number followed by a line break to the output div.
-                    outputDiv.innerHTML += i + "<br />";
-                }
-            }
-        </script>
-    </p>
 </body>
 </html>
