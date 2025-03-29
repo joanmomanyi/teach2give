@@ -16,15 +16,19 @@
     </p>
     <p>
         <code>
-            // Original console log code (not displayed on page)
+            // Original console log FizzBuzz implementation: <br>
             for (let i = 1; i <= 100; i++) { <br>
                 if (i % 3 === 0 && i % 5 === 0) { <br>
+                    // If i is divisible by both 3 and 5, print "FizzBuzz". <br>
                     console.log("FizzBuzz"); <br>
                 } else if (i % 3 === 0) { <br>
+                    // If i is divisible by 3, print "Fizz". <br>
                     console.log("Fizz"); <br>
                 } else if (i % 5 === 0) { <br>
+                    // If i is divisible by 5, print "Buzz". <br>
                     console.log("Buzz"); <br>
                 } else { <br>
+                    // Otherwise, print the number i. <br>
                     console.log(i); <br>
                 } <br>
             }
@@ -33,26 +37,30 @@
         <div id="fizzbuzz-output"></div>
 
         <script>
-            // Get the div element where the output will be displayed.
+            // Get the HTML element where FizzBuzz results will be displayed.
             let outputDiv = document.getElementById("fizzbuzz-output");
 
-            // Loop from 1 to 100.
+            // Loop through numbers from 1 to 100.
             for (let i = 1; i <= 100; i++) {
-                // Check if the number is a multiple of both 3 and 5.
+                // Check if the current number is divisible by both 3 and 5.
                 if (i % 3 === 0 && i % 5 === 0) {
-                    outputDiv.innerHTML += "FizzBuzz<br />"; // Append "FizzBuzz" with a line break.
+                    // Append "FizzBuzz" followed by a line break to the output div.
+                    outputDiv.innerHTML += "FizzBuzz<br />";
                 } 
-                // Check if the number is a multiple of 3.
+                // Check if the current number is divisible by 3.
                 else if (i % 3 === 0) {
-                    outputDiv.innerHTML += "Fizz<br />"; // Append "Fizz" with a line break.
+                    // Append "Fizz" followed by a line break to the output div.
+                    outputDiv.innerHTML += "Fizz<br />";
                 } 
-                // Check if the number is a multiple of 5.
+                // Check if the current number is divisible by 5.
                 else if (i % 5 === 0) {
-                    outputDiv.innerHTML += "Buzz<br />"; // Append "Buzz" with a line break.
+                    // Append "Buzz" followed by a line break to the output div.
+                    outputDiv.innerHTML += "Buzz<br />";
                 } 
-                // If not a multiple of 3 or 5, append the number itself.
+                // If not divisible by 3 or 5, append the number itself.
                 else {
-                    outputDiv.innerHTML += i + "<br />"; // Append the number with a line break.
+                    // Append the number followed by a line break to the output div.
+                    outputDiv.innerHTML += i + "<br />";
                 }
             }
         </script>
