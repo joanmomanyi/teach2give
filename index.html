@@ -27,7 +27,6 @@
 
     <h3>Solution</h3>
 
-    <p>
         <code>
 //Loop through all numbers from 1 to 100
 //Current number is assigned varible i
@@ -55,5 +54,36 @@ for (let i = 1; i <= 100; i++) {
 
 }
         </code>
+
+ <h2>Question 2</h2>
+
+    <p>
+        Write a program to generate the Fibonacci sequence up to 100
+   </p>
+
+   <h3>Solution</h3>
+
+      <code>
+// Initialize with the first number = 0.
+const fibonacciSequence = [0]; 
+let num_1 = 0;
+let num_2 = 1;
+
+for (let i = 1; ; i++) {
+  const nextNum = num_1 + num_2;
+
+  if (nextNum > 100) {
+    break;
+  }
+
+  fibonacciSequence.push(nextNum);
+
+  num_1 = num_2;
+  num_2 = nextNum;
+}
+
+console.log(fibonacciSequence);
+      </code>
+
 </body>
 </html>
