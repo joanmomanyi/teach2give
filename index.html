@@ -101,23 +101,52 @@ console.log(fibonacciSequence);
 
       </code>
 
- <h2>Question 3</h2>
+ <h2>Question 3: Power of Two</h2>
 
     <p>
-        Write a program to generate the Fibonacci sequence up to 100
-   </p>
-
-   <p>
-      The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones.
-<br>
- For example: 0, 1, 1, 2, 3, 5, 8, 13...
+        Write a program that takes an integer as input and returns true if the input is a power of two.
+<h4>Examples:</h4>
+8=> returns true <br>
+6=> returns false
    </p>
 
    <h3>Solution</h3>
 
       <code>
+/**
+ * Checks if a given integer is a power of two.
+ *
+ * @param {number} n The integer to check.
+ * @returns {boolean} True if the integer is a power of two, false otherwise.
+ */
+function isPowerOfTwo(n) {
+  // Handle edge cases:
+  // 1. Numbers less than or equal to 0 are not powers of two.
+  if (n <= 0) {
+    return false;
+  }
 
+  // 2. 1 is a power of 2 (2^0).
+  if (n === 1) {
+    return true;
+  }
 
+// Repeatedly divide n by 2 until it becomes 1 or an odd number.
+// Using modulus division confirms if the no is divisible by 2
+  while (n % 2 === 0) {
+    n = n/2;
+  }
+
+  // If n is 1 after repeated division, it was a power of two.
+  return n === 1;
+}
+
+// Example usage:
+console.log(isPowerOfTwo(8));  // Output: true
+console.log(isPowerOfTwo(6));  // Output: false
+console.log(isPowerOfTwo(1));  //output: true
+console.log(isPowerOfTwo(0));  //output: false
+console.log(isPowerOfTwo(-4)); //output: false
       </code>
 
 </body>
