@@ -138,7 +138,11 @@ function isPowerOfTwo(n) {
   }
 
   // If n is 1 after repeated division, it was a power of two.
-  return n === 1;
+  if (n === 1) {
+     return true;
+  } else{
+     return false;
+  }
 }
 
 // Example usage:
