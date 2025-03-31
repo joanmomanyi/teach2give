@@ -132,6 +132,7 @@ function isPowerOfTwo(n) {
   }
 
 // Repeatedly divide n by 2 until it becomes 1 or an odd number.
+// Using modulus division ensures the remainder is 0 otherwise the number is odd
   while (n % 2 === 0) {
     n = n/2;
   }
