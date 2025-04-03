@@ -152,6 +152,95 @@ console.log(isPowerOfTwo(1));  //output: true
 console.log(isPowerOfTwo(0));  //output: false
 console.log(isPowerOfTwo(-4)); //output: false
       </code>
+ <h2>Question 4: Capitalize Words</h2>
 
+    <p>
+        Write a program that accepts a string as input, capitalizes the first letter of each word in the
+string, and then returns the result string.
+<h4>Examples:</h4>
+"hi"=> returns "Hi"<br>
+"i love programming"=> returns "I Love Programming"
+   </p>
+
+   <h3>Solution</h3>
+
+      <code>
+          // Write a program that accepts a string as input, capitalizes the first letter of each word in the
+// string, and then returns the result string.
+
+function capitalizeFirstLetters(str) {
+  if (typeof(str) !== "string") {
+    console.log("Please enter a valid string");
+    return;
+  }
+  // Using regEx
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+let result = capitalizeFirstLetters("enter the input string here"); 
+console.log(result);
+      </code>
+    
+     <h2>Question 5: Reverse Integer</h2>
+
+    <p>
+        Write a program that takes an integer as input and returns an integer with reversed digit
+ordering.
+<h4>Examples:</h4>
+For input 500, the program should return 5.<br>
+For input -56, the program should return -65.<br>
+For input -90, the program should return -9.<br>
+For input 91, the program should return 19.
+   </p>
+
+   <h3>Solution</h3>
+
+      <code>
+          // Write a program that takes an integer as input and returns an integer with reversed digit
+// ordering.
+
+
+function reverseInteger(inputInteger) {
+  if (typeof(inputInteger) !== "number") {
+    console.log("Please enter a valid integer");
+    return;
+  }
+  let parsedInt = parseInt(inputInteger);
+  return Math.abs(parsedInt).toString().split('').reverse().join('') * Math.sign(parsedInt);
+}
+// Enter the number to reverse here
+let result = reverseInteger("hi");
+console.log(result)
+      </code>
+         <h2>Question 6: Count Vowels</h2>
+
+    <p>
+        Write a program that counts the number of vowels in a sentence.
+<h4>Examples:</h4>
+eg " Hello World " => returns 2"
+   </p>
+
+   <h3>Solution</h3>
+
+      <code>
+          // Write a program that counts the number of vowels in a sentence
+
+
+function countVowels(str) {
+  if (typeof(str) !== "string") {
+    console.log("Please enter a valid string");
+    return;
+  }
+  const vowelsMatch = str.match(/[aeiouAEIOU]/g);
+  if (!vowelsMatch) {
+      console.log(0);
+  } else {
+      console.log(vowelsMatch.length);
+  }
+}
+
+let result = countVowels("my vowel string"); 
+console.log(result);
+      </code>
 </body>
 </html>
